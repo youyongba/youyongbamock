@@ -4,6 +4,8 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
+const cors = require('cors');
+
 // import restc
 const restc = require('restc');
 
@@ -147,7 +149,15 @@ var reviewList = require('./routes/admin/review-tools/list');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
+
+
 var app = express();
+
+
+app.use(cors({
+  origin: '*'  // 只允许 http://example.com 可以访问
+}));
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

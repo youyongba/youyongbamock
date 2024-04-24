@@ -16,7 +16,8 @@ router.get('/', function (req, res, next) {
   // 使用 Mock.js 模拟数据
   var data = Mock.mock({
     // 从预定义的状态中随机挑选一个
-    "status": Random.pick(statuses),
+    // "status": Random.pick(statuses),
+    "status": true,
     // 从预定义的消息中随机挑选一个
     "message": Random.pick(messages),
     "data": {
